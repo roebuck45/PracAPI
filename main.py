@@ -2,6 +2,7 @@
 # https://rapidapi.com/theapiguy/api/national-weather-service/
 
 import requests
+from pprint import pprint
 
 url = "https://national-weather-service.p.rapidapi.com/zones/%7Btype%7D/%7BzoneId%7D/forecast"
 
@@ -12,4 +13,4 @@ headers = {
 
 response = requests.get(url, headers=headers)
 
-print(response.json())
+pprint(response.json())
