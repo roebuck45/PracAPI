@@ -1,6 +1,7 @@
 # Practice API Call
 # https://rapidapi.com/KegenGuyll/api/dad-jokes/
 
+from pprint import pprint
 import requests
 from configs import dadjokesAPI
 
@@ -13,4 +14,4 @@ headers = {
 
 response = requests.get(url, headers=headers)
 
-print(response.json())
+pprint(response.json())
