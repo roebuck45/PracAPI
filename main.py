@@ -1,20 +1,15 @@
 # Practice API Call
-# https://rapidapi.com/soyamchinglemba/api/imdb_api4/
+# https://rapidapi.com/theapiguy/api/national-weather-service/
 
-const axios = require('axios');
+import requests
 
-const options = {
-  method: 'GET',
-  url: 'https://imdb_api4.p.rapidapi.com/get_movies_by_cast_name',
-  headers: {
-    'X-RapidAPI-Key': '6d84a55e3bmsh487c9b6e29c1760p1d0072jsn49a780a77f59',
-    'X-RapidAPI-Host': 'imdb_api4.p.rapidapi.com'
-  }
-};
+url = "https://national-weather-service.p.rapidapi.com/zones/%7Btype%7D/%7BzoneId%7D/forecast"
 
-try {
-	const response = await axios.request(options);
-	console.log(response.data);
-} catch (error) {
-	console.error(error);
+headers = {
+	"X-RapidAPI-Key": "6d84a55e3bmsh487c9b6e29c1760p1d0072jsn49a780a77f59",
+	"X-RapidAPI-Host": "national-weather-service.p.rapidapi.com"
 }
+
+response = requests.get(url, headers=headers)
+
+print(response.json())
