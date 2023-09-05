@@ -5,13 +5,18 @@ from pprint import pprint
 import requests
 from configs import dadjokesAPI
 
-url = "https://dad-jokes.p.rapidapi.com/random/joke"
+def getJoke():
+	global dadjokesAPI
+	url = "https://dad-jokes.p.rapidapi.com/random/joke"
 
-headers = {
-	"X-RapidAPI-Key": dadjokesAPI,
-	"X-RapidAPI-Host": "dad-jokes.p.rapidapi.com"
-}
+	headers = {
+		"X-RapidAPI-Key": dadjokesAPI,
+		"X-RapidAPI-Host": "dad-jokes.p.rapidapi.com"
+	}
 
-response = requests.get(url, headers=headers)
+	response = requests.get(url, headers=headers)
 
-pprint(response.json())
+	return response.json()
+
+joke = getJoke()
+
